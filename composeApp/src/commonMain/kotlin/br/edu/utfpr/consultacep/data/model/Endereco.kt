@@ -3,7 +3,6 @@ package br.edu.utfpr.consultacep.data.model
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
 
-
 @Serializable
 data class Endereco(
     val cep: String = "",

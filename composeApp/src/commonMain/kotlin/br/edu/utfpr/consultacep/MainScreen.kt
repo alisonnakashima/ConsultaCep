@@ -86,16 +86,6 @@ fun MainScreen(
                 }
             }
 
-//            Spacer(modifier = Modifier.height(16.dp))
-
-            //         snackBar para exibição da mensagem de erro
-            //        LaunchedEffect(formState.hasErrorLoading) {
-            //            if (formState.hasErrorLoading) {
-            //                snackbarHostState.showSnackbar("Erro ao buscar CEP. Tente novamente. ${errorMessage}")
-            //            }
-            //        }
-            //        print(formState.hasErrorLoading.toString())
-
             Text("CEP: ${formState.endereco.cep}")
             Text("Logradouro: ${formState.endereco.logradouro}")
             Text("Bairro: ${formState.endereco.bairro}")
@@ -103,8 +93,5 @@ fun MainScreen(
             Text("UF: ${formState.endereco.uf}")
 
         }
-
     }
-//    SnackbarHost(hostState = snackbarHostState)
-
 }
