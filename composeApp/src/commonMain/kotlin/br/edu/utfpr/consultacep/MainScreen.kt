@@ -47,10 +47,10 @@ fun MainScreen(
                 onValueChange = {
                     val rawText = it.text.filter { char -> char.isDigit() }
 
-                    // Limita a entrada a 8 caracteres
+                    // Limitando a entrada em 8 caracteres
                     val limitedText = rawText.take(8)
 
-                    /// Formata o texto para o formato de CEP (XXXXX-XXX)
+                    /// Formatar o texto para o formato de CEP (XXXXX-XXX)
                     val formatted = if (limitedText.length > 5) {
                         "${limitedText.take(5)}-${limitedText.drop(5)}"
                     } else {
@@ -61,7 +61,6 @@ fun MainScreen(
                         text = formatted,
                         selection = TextRange(formatted.length) // Define o cursor no final do texto
                     )
-
                     viewModel.onCepChanged(formatted)
                 },
                 label = { Text("Digite o CEP") },

@@ -41,7 +41,6 @@ open class CepViewModel(
                         hasErrorLoading = true
                     )
                     return@launch
-
                 }
 
                 _formState.value = _formState.value.copy(
