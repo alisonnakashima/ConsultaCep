@@ -3,6 +3,7 @@ package br.edu.utfpr.consultacep.data.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.edu.utfpr.consultacep.data.model.Endereco
 import br.edu.utfpr.consultacep.data.repository.CepRepository
 import br.edu.utfpr.consultacep.data.validator.CepValidator
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -53,5 +54,11 @@ open class CepViewModel(
 
     fun clearError() {
         _errorMessage.value = null
+    }
+
+    fun clearEndereco() {
+        _formState.value = _formState.value.copy(
+            endereco = Endereco()
+        )
     }
 }

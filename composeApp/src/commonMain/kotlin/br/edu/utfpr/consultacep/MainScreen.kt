@@ -27,6 +27,7 @@ fun MainScreen(viewModel: CepViewModel) {
         errorMessage?.let { message ->
             coroutineScope.launch {
                 snackbarHostState.showSnackbar(message)
+
                 viewModel.clearError() // Limpa o erro após exibição
             }
         }
@@ -68,7 +69,9 @@ fun MainScreen(viewModel: CepViewModel) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
         } else {
             Button(
-                onClick = { viewModel.buscarCep(cepInput.text) },
+                onClick = {
+                    viewModel.clearEndereco()
+                    viewModel.buscarCep(cepInput.text) },
                 enabled = formState.isDataValid,
                 modifier = Modifier.fillMaxWidth()
             ) {
